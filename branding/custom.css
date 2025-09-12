@@ -1,0 +1,50 @@
+/* Fondo general */
+body {
+  background-color: #fff8f0 !important;
+  color: #222 !important;
+}
+
+/* Barra superior (gradiente de tu logo) */
+.navbar,
+.bg-primary {
+  background: linear-gradient(90deg, #FF6600, #FFD700, #CC3300) !important;
+  color: #fff !important;
+}
+
+/* Botones principales */
+.btn-primary,
+.btn-outline-primary {
+  background-color: #FF6600 !important;
+  border-color: #FF6600 !important;
+  color: #fff !important;
+}
+
+.btn-primary:hover,
+.btn-outline-primary:hover {
+  background-color: #CC3300 !important;
+  border-color: #CC3300 !important;
+  color: #fff !important;
+}
+
+/* Texto principal (antes azul) */
+.text-primary,
+a,
+a.text-primary {
+  color: #FF6600 !important;
+}
+
+a:hover,
+a.text-primary:hover {
+  color: #CC3300 !important;
+}
+
+/* Inputs activos */
+.form-control:focus {
+  border-color: #FFD700 !important;
+  box-shadow: 0 0 0 0.2rem rgba(255, 215, 0, 0.25) !important;
+}
+
+/* Iconos */
+.text-primary {
+  color: #FF6600 !important;
+}
