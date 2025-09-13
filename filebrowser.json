@@ -1,0 +1,11 @@
+{
+  "port": 9080,
+  "address": "0.0.0.0",
+  "database": "/data/data/com.termux/files/home/filebrowser/synedemus-filebrowser/filebrowser.db",
+  "root": ".",
+  "branding": {
+    "name": "Synedemus",
+    "disableExternal": false,
+    "theme": "/data/data/com.termux/files/home/filebrowser/synedemus-filebrowser/branding"
+  }
+}

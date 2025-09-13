@@ -1,50 +1,159 @@
-/* Fondo general */
-body {
-  background-color: #fff8f0 !important;
-  color: #222 !important;
+/* Customized palette derived from your logo (palette: #ffe700, #fea003, #f95500, #cd2700, #480a01, #fffaf6)
+   Mapping applied for consistent, warm, brand-coherent look.
+   Based on original custom.css. */
+:root{
+  --logo-yellow: #ffe700;
+  --logo-amber: #fea003;
+  --logo-orange: #f95500;
+  --logo-red: #cd2700;
+  --logo-dark: #480a01;
+  --logo-cream: #fffaf6;
+  --icon-shadow: 0 2px 0 rgba(0,0,0,0.12);
 }
 
-/* Barra superior (gradiente de tu logo) */
-.navbar,
-.bg-primary {
-  background: linear-gradient(90deg, #FF6600, #FFD700, #CC3300) !important;
-  color: #fff !important;
+/* remove a bit of padding from the file list entries */
+#listing.list .item {
+    padding: 0.7em;
 }
 
-/* Botones principales */
-.btn-primary,
-.btn-outline-primary {
-  background-color: #FF6600 !important;
-  border-color: #FF6600 !important;
-  color: #fff !important;
+/* make folders warm yellow/amber (brand) */
+#listing .item[data-dir=true] div i {
+    color: var(--logo-amber);
+    text-shadow: 0 1px 0 rgba(255,255,255,0.15), 0 2px 6px rgba(0,0,0,0.12);
 }
 
-.btn-primary:hover,
-.btn-outline-primary:hover {
-  background-color: #CC3300 !important;
-  border-color: #CC3300 !important;
-  color: #fff !important;
+/* packed files - use warm orange instead of purple, keep same icon override */
+#listing .item[aria-label$=".7z"] div i,
+#listing .item[aria-label$=".arj"] div i,
+#listing .item[aria-label$=".zip"] div i,
+#listing .item[aria-label$=".gz"] div i,
+#listing .item[aria-label$=".tar"] div i,
+#listing .item[aria-label$=".bz"] div i,
+#listing .item[aria-label$=".bz2"] div i,
+#listing .item[aria-label$=".xz"] div i,
+#listing .item[aria-label$=".tbz"] div i {
+    color: var(--logo-orange);
+    text-shadow: var(--icon-shadow);
+}
+#listing .item[aria-label$=".7z"] .material-icons,
+#listing .item[aria-label$=".arj"] .material-icons,
+#listing .item[aria-label$=".zip"] .material-icons,
+#listing .item[aria-label$=".gz"] .material-icons,
+#listing .item[aria-label$=".tar"] .material-icons,
+#listing .item[aria-label$=".bz"] .material-icons,
+#listing .item[aria-label$=".bz2"] .material-icons,
+#listing .item[aria-label$=".xz"] .material-icons,
+#listing .item[aria-label$=".tbz"] .material-icons {
+    visibility: hidden;
+}
+#listing .item[aria-label$=".7z"] .material-icons::before,
+#listing .item[aria-label$=".arj"] .material-icons::before,
+#listing .item[aria-label$=".zip"] .material-icons::before,
+#listing .item[aria-label$=".gz"] .material-icons::before,
+#listing .item[aria-label$=".tar"] .material-icons::before,
+#listing .item[aria-label$=".bz"] .material-icons::before,
+#listing .item[aria-label$=".bz2"] .material-icons::before,
+#listing .item[aria-label$=".xz"] .material-icons::before,
+#listing .item[aria-label$=".tbz"] .material-icons::before {
+    content: "archive";
+    visibility: visible;
 }
 
-/* Texto principal (antes azul) */
-.text-primary,
-a,
-a.text-primary {
-  color: #FF6600 !important;
+/* PDF - use logo yellow for a bright, consistent look */
+#listing .item[aria-label$=".pdf"] div i {
+    color: var(--logo-yellow);
+    text-shadow: 0 1px 0 rgba(255,255,255,0.18), 0 3px 6px rgba(0,0,0,0.10);
+}
+#listing .item[aria-label$=".pdf"] .material-icons { visibility: hidden; }
+#listing .item[aria-label$=".pdf"] .material-icons::before {
+    content: "picture_as_pdf";
+    visibility: visible;
 }
 
-a:hover,
-a.text-primary:hover {
-  color: #CC3300 !important;
+/* word processors - use dark accent for readability (instead of blue) */
+#listing .item[aria-label$=".doc"] div i,
+#listing .item[aria-label$=".docx"] div i,
+#listing .item[aria-label$=".odt"] div i,
+#listing .item[aria-label$=".sxw"] div i {
+    color: var(--logo-dark);
+    text-shadow: var(--icon-shadow);
+}
+#listing .item[aria-label$=".doc"] .material-icons,
+#listing .item[aria-label$=".docx"] .material-icons,
+#listing .item[aria-label$=".odt"] .material-icons,
+#listing .item[aria-label$=".sxw"] .material-icons {
+    visibility: hidden;
+}
+#listing .item[aria-label$=".doc"] .material-icons::before,
+#listing .item[aria-label$=".docx"] .material-icons::before,
+#listing .item[aria-label$=".odt"] .material-icons::before,
+#listing .item[aria-label$=".sxw"] .material-icons::before {
+    content: "description";
+    visibility: visible;
 }
 
-/* Inputs activos */
-.form-control:focus {
-  border-color: #FFD700 !important;
-  box-shadow: 0 0 0 0.2rem rgba(255, 215, 0, 0.25) !important;
+/* PowerPoint - use strong red from logo */
+#listing .item[aria-label$=".ppt"] div i,
+#listing .item[aria-label$=".pptx"] div i,
+#listing .item[aria-label$=".pps"] div i,
+#listing .item[aria-label$=".odp"] div i {
+    color: var(--logo-red);
+    text-shadow: var(--icon-shadow);
 }
 
-/* Iconos */
-.text-primary {
-  color: #FF6600 !important;
+/* Excel - warm amber (keep it distinct but within the brand) */
+#listing .item[aria-label$=".xls"] div i,
+#listing .item[aria-label$=".xlsx"] div i,
+#listing .item[aria-label$=".ods"] div i,
+#listing .item[aria-label$=".sxc"] div i {
+    color: var(--logo-amber);
+    text-shadow: var(--icon-shadow);
 }
+
+/* legacy/other text-like */
+#listing .item[aria-label$=".wri"] div i {
+    color: var(--logo-dark);
+}
+
+/* sound and video files - vivid orange so media stands out */
+#listing .item[data-type=audio] div i,
+#listing .item[data-type=video] div i {
+    color: var(--logo-orange);
+    text-shadow: 0 1px 0 rgba(255,255,255,0.12);
+}
+
+/* text files - change icon to description and keep dark tone */
+#listing .item[aria-label$=".txt"] .material-icons,
+#listing .item[aria-label$=".md"] .material-icons {
+    visibility: hidden;
+}
+#listing .item[aria-label$=".txt"] .material-icons::before,
+#listing .item[aria-label$=".md"] .material-icons::before {
+    content: "description";
+    visibility: visible;
+    color: var(--logo-dark);
+}
+
+/* iCal - use cream/neutral icon to avoid clashing with warm palette */
+#listing .item[aria-label$=".ics"] .material-icons {
+    visibility: hidden;
+}
+#listing .item[aria-label$=".ics"] .material-icons::before {
+    content: "event";
+    visibility: visible;
+    color: var(--logo-cream);
+    text-shadow: 0 1px 0 rgba(0,0,0,0.08);
+}
+
+/* small touches - hover state to feel more 'finished' */
+#listing .item:hover div i {
+    transform: translateY(-1px);
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.12));
+}
+
+/* ensure good contrast for filenames when using warm icons */
+#listing .item .name {
+    color: #222;
+}
+
+/* end of palette-based customizations */
